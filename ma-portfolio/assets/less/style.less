@@ -1,0 +1,53 @@
+@max_width: 1200px;
+@mobile_width: 640px;
+@tablet_width: 767px;
+@min_width: 320px;
+
+@base_font: 18;
+
+@main_colour: #DD2220;
+
+/* breakpoints */
+@mobile: ~"(max-width: @{mobile_width})";
+@tablet: ~"(max-width: @{tablet_width})";
+@desktop: ~"(min-width: 766px)";
+
+@import 'reset.less';
+@import 'mixins.less';
+@import 'dynamic.less';
+
+html {
+	font-size: @base_font + 0px;
+}
+
+body {
+	position: relative;
+	font-family: @body_font;
+	.rems(18);
+	font-weight: 300;
+	background: #fff;
+    min-height: 100vh;
+    min-width: 320px;
+    color: #333;
+
+    @media @mobile {
+	    font-size: 16px;
+    }
+}
+
+.site_container {
+    height: 100vh;
+}
+
+.main {
+	position: relative;
+	z-index: 4999;
+}
+
+.wrapper {
+	.clearfix;
+	width: 100%;
+	max-width: @max_width;
+	min-width: @min_width;
+	margin: 0 auto;
+}
